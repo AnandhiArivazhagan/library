@@ -10,7 +10,7 @@ app.use(express.json());
 app.use(cors());
 
 // ===== DATABASE CONNECTION =====
-mongoose.connect("mongodb+srv://Anandhi:anandhi_2005@cluster0.favzmu6.mongodb.net/libraryDB")
+mongoose.connect("mongodb+srv://Anandhi:anandhi_2005@cluster0.favzmu6.mongodb.net/libraryDB?appName=Cluster0")
   .then(() => console.log("✅ Connected to MongoDB"))
   .catch(err => console.log(err));
 
@@ -64,5 +64,5 @@ app.delete("/books/:id", async (req, res) => {
 });
 
 
-const PORT = 3000;
+const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => console.log("🚀 Server running on port", PORT));
