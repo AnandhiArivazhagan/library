@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>My Magical Reading Library</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<!-- 3D BOOK COVER INTRO -->
+<div class="intro-book" id="introBook">
+  <div class="book-wrapper">
+    <div class="cover left-cover"></div>
+    <div class="cover right-cover"></div>
+  </div>
+</div>
+
+<div class="book-container hidden">
+
+  <div class="top-bar">
+    <h1>📚 My Reading Library</h1>
+    <button class="theme-toggle" onclick="toggleTheme()">🌙</button>
+  </div>
+
+  <!-- SEARCH -->
+  <input type="text" id="searchInput" placeholder="🔍 Search books..." onkeyup="renderBooks()">
+
+  <!-- FORM -->
+  <div class="form-section">
+    <input type="text" id="title" placeholder="Book Name *">
+    <input type="text" id="author" placeholder="Author (Optional)">
+    <input type="number" id="price" placeholder="Price (Optional)">
+    
+    <select id="category">
+      <option value="Fiction">Fiction</option>
+      <option value="Non-Fiction">Non-Fiction</option>
+      <option value="Others">Others</option>
+    </select>
+
+    <input type="file" id="image" accept="image/*">
+    <button class="add-btn" onclick="addBook()">Add Book</button>
+  </div>
+
+  <!-- FILTERS -->
+  <div class="filters">
+    <button onclick="filterBooks('All')">All</button>
+    <button onclick="filterBooks('Fiction')">Fiction</button>
+    <button onclick="filterBooks('Non-Fiction')">Non-Fiction</button>
+    <button onclick="filterBooks('Others')">Others</button>
+  </div>
+
+  <!-- STATS -->
+  <div class="stats">
+    📖 Read: <span id="readCount">0</span> |
+    📕 Unread: <span id="unreadCount">0</span>
+  </div>
+
+  <div class="book-list" id="bookList"></div>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
