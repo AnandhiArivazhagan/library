@@ -33,6 +33,7 @@ app.post("/books", async (req, res) => {
     await newBook.save();
     res.json(newBook);
   } catch (err) {
+    console.log("POST ERROR:", err.message);
     res.status(400).json({ error: err.message });
   }
 });
