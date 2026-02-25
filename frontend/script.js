@@ -8,6 +8,9 @@ let currentCategory = "All";
 window.onload = async () => {
   const intro = document.getElementById("introBook");
 
+  // default to dark theme
+  document.body.classList.add("dark");
+
   setTimeout(() => intro.classList.add("open"), 300);
   setTimeout(() => {
     intro.style.display = "none";
